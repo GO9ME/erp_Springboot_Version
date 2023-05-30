@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+	<definition name="menu/sales" extends="mainTemplate">
+		<put-attribute name="menu" 
+				value="/WEB-INF/views/menu/sales_menu.jsp"/>
+		<put-attribute name="content" 
+				value="/WEB-INF/views/emp/mypage.jsp"/>
+	</definition>
+	<definition name="menu/insa" extends="mainTemplate">
+		<put-attribute name="menu" 
+				value="/WEB-INF/views/menu/insa_menu.jsp"/>
+		<put-attribute name="content" 
+				value="/WEB-INF/views/emp/mypage.jsp"/>
+	</definition>
+	<definition name="menu/it" extends="mainTemplate">
+		<put-attribute name="menu" 
+				value="/WEB-INF/views/menu/it_menu.jsp"/>
+		<put-attribute name="content" 
+				value="/WEB-INF/views/emp/mypage.jsp"/>
+	</definition>
+	<definition name="menu/manage" extends="mainTemplate">
+		<put-attribute name="menu" 
+				value="/WEB-INF/views/menu/manage_menu.jsp"/>
+		<put-attribute name="content" 
+				value="/WEB-INF/views/emp/mypage.jsp"/>
+	</definition>
+	<definition name="menu/jaemu" extends="mainTemplate">
+		<put-attribute name="menu" 
+				value="/WEB-INF/views/menu/jaemu_menu.jsp"/>
+		<put-attribute name="content" 
+				value="/WEB-INF/views/emp/mypage.jsp"/>
+	</definition>
+	<definition name="menu/pub" extends="mainTemplate">
+		<put-attribute name="menu" 
+				value="/WEB-INF/views/menu/pub_menu.jsp"/>
+		<put-attribute name="content" 
+				value="/WEB-INF/views/include/content.jsp"/>
+	</definition>
+</tiles-definitions>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

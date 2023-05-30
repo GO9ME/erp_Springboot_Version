@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.multi.erp.board">
+	<select id="getfileinfo" parameterType="boardfile" resultType="boardfile">
+		select * from board_file where board_no=#{board_no} and boardFileno=#{boardFileno}
+	</select>
+	<select id="fileselect" parameterType="String" resultType="boardfile">
+		select * from board_file where board_no = #{boardno}
+	</select>
+	
+	<insert id="fileinsert" parameterType="java.util.List">
+		insert into board_file values
+		<foreach collection="list" item="file" separator=",">
+			(last_insert_id(),#{file.originalFilename},#{file.storeFilename},#{file.boardFileno})
+		</foreach>
+	</insert>
+	<!-- #{}으로 변수를 연결하면 PreparedStatement의 ?와 연결  -->
+	<insert id="insert" parameterType="board">
+		insert into tbboard
+		values(null,#{id},sysdate(),#{title},#{content},#{category})
+	</insert>
+	<select id="selectall" resultType="board">
+		select * from tbboard
+	</select>
+	<select id="categorySearch" parameterType="String" resultType="board">
+		select * from tbboard where category=#{category} 
+	</select>
+	<select id="search" resultType="board" parameterType="String">
+		select * from tbboard where title like concat('%', #{title},'%')
+	</select>
+	<select id="read" resultType="board" parameterType="String">
+		select * from tbboard where board_no = #{board_no}
+	</select>
+	<delete id="delete" parameterType="String">
+		delete from tbboard where board_no = #{board_no}
+	</delete>
+	<update id="update" parameterType="board">
+		update tbboard
+		set title=#{title}, content=#{content},  category=#{category}
+		where board_no = #{board_no}
+	</update>
+	<!-- where절이 만들어지지 않는 상황이면 where절을 추가하지 않는다. -->
+	<select id="dynamicsearch" resultType="board" parameterType="Map">
+		select * from tbboard
+		<where>
+			<if test="tag=='title' and data!=''">
+				title like concat('%',#{data},'%')
+			</if>
+			<if test="tag=='id' and data!=''">
+				id like concat('%',#{data},'%')
+			</if>
+			<if test="tag=='content' and data!=''">
+				content like concat('%',#{data},'%')
+			</if>
+			<if test="tag=='write_date' and data!=''">
+				<![CDATA[
+					write_date <= #{data}
+				]]>
+					
+			</if>
+		</where>
+	</select>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+

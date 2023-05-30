@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+	<definition name="indexTemplate" 
+			template="/WEB-INF/views/layout/index.jsp">
+		<put-attribute name="top" value="/WEB-INF/views/include/top.jsp"/>
+		<put-attribute name="content" value="/WEB-INF/views/include/mainContent.jsp"/>
+	</definition>
+	<definition name="mainTemplate" 
+			template="/WEB-INF/views/layout/mainLayout.jsp">
+		<put-attribute name="top" value="/WEB-INF/views/include/top.jsp"/>
+		<put-attribute name="menu" value="/WEB-INF/views/menu/pub_menu.jsp"/>
+		<put-attribute name="content" value="/WEB-INF/views/emp/login.jsp"/>
+	</definition>
+	
+	<definition name="index" extends="indexTemplate"></definition>
+	<definition name="login" extends="mainTemplate"></definition>
+
+</tiles-definitions>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
