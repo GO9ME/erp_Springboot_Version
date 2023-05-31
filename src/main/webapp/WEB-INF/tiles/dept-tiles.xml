@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+	<definition name="dept/dept_register" extends="mainTemplate">
+		<put-attribute name="menu" value="/WEB-INF/views/menu/insa_menu.jsp"/>
+		<put-attribute name="content" 
+			value="/WEB-INF/views/dept/dept_register.jsp"/>
+	</definition>
+	<definition name="dept/list" extends="mainTemplate">
+		<put-attribute name="menu" value="/WEB-INF/views/menu/insa_menu.jsp"/>
+		<put-attribute name="content" 
+			value="/WEB-INF/views/dept/deptlist.jsp"/>
+	</definition>
+	<definition name="dept/dept_read" extends="mainTemplate">
+		<put-attribute name="menu" value="/WEB-INF/views/menu/insa_menu.jsp"/>
+		<put-attribute name="content" 
+			value="/WEB-INF/views/dept/dept_read.jsp"/>
+	</definition>
+	<definition name="dept/dept_update" extends="mainTemplate">
+		<put-attribute name="menu" value="/WEB-INF/views/menu/insa_menu.jsp"/>
+		<put-attribute name="content" 
+			value="/WEB-INF/views/dept/dept_update.jsp"/>
+	</definition>
+	<definition name="dept/tree" extends="mainTemplate">
+		<put-attribute name="menu" value="/WEB-INF/views/menu/insa_menu.jsp"/>
+		<put-attribute name="content" 
+			value="/WEB-INF/views/dept/tree.jsp"/>
+	</definition>
+</tiles-definitions>

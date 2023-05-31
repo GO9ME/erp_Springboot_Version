@@ -1,11 +1,14 @@
-package com.multi.erp.dto;
+package com.multi.erp.board;
 
 import java.sql.Date;
+
 import java.util.List;
 
+import org.apache.ibatis.type.Alias;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+@Alias("board")
 public class BoardDTO {
 	String board_no;
 	String id;
@@ -55,6 +58,8 @@ public class BoardDTO {
 		return files;
 	}
 	public void setFiles(List<MultipartFile> files) {
+		System.out.println("********************************************");
+		
 		this.files = files;
 	}
 	public String getBoard_no() {
@@ -64,9 +69,11 @@ public class BoardDTO {
 		this.board_no = board_no;
 	}
 	public String getId() {
+		System.out.println("getId()");
 		return id;
 	}
 	public void setId(String id) {
+		System.out.println("setId()");
 		this.id = id;
 	}
 	public Date getWrite_date() {

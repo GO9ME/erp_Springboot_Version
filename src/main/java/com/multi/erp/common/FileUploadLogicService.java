@@ -9,7 +9,7 @@ import java.util.UUID;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.multi.erp.dto.BoardFileDTO;
+import com.multi.erp.board.BoardFileDTO;
 @Service
 public class FileUploadLogicService {
 	//파일업로드를 수행하는 메소드 - 업로드된 파일의 정보를 BoardFileDTO로 변환해서 리턴

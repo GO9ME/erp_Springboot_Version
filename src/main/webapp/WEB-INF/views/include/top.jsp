@@ -41,9 +41,9 @@
 					</c:when>
 					<c:otherwise>
 			
-						<li><a href="/emp/spring/logout"><span class="glyphicon glyphicon-log-out"></span>
+						<li><a href="/erp/emp/spring/logout"><span class="glyphicon glyphicon-log-out"></span>
 								Logout</a></li>
-						<li><a href="/emp/mypage"><span class="glyphicon glyphicon-log-out"></span>
+						<li><a href="/erp/emp/mypage"><span class="glyphicon glyphicon-log-out"></span>
 								mypage</a></li>
 						</ul>
 						

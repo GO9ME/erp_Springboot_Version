@@ -21,14 +21,14 @@ public class SpringConfig {
 //	public BoardDAO boardDAO() {
 //		return new BoardDAO();
 //	}
-	@Bean
-	public SqlSessionFactory sqlSessionFactory(DataSource dataSource) throws Exception {
-		SqlSessionFactoryBean sessionFactory = new SqlSessionFactoryBean();
-		sessionFactory.setDataSource(dataSource);
-		
-		//Resource[] res = new PathMatchingResourcePatternResolver().getResources("classpath:mappers/*.xml");
-		//sessionFactory.setMapperLocations(res);
-		
-		return sessionFactory.getObject();
-	}
+//	@Bean
+//	public SqlSessionFactory sqlSessionFactory(DataSource dataSource) throws Exception {
+//		SqlSessionFactoryBean sessionFactory = new SqlSessionFactoryBean();
+//		sessionFactory.setDataSource(dataSource);
+//		
+//		//Resource[] res = new PathMatchingResourcePatternResolver().getResources("classpath:mappers/*.xml");
+//		//sessionFactory.setMapperLocations(res);
+//		
+//		return sessionFactory.getObject();
+//	}
 }
