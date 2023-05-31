@@ -17,6 +17,13 @@ public class IndexController {
 		// subfix => .html
 		return "thymeleaf/hello";
 	}
+	
+	@RequestMapping("/test2")
+	public String test2(Model model) {
+		model.addAttribute("msg", "spring boot test ...###^^ ");
+
+		return "thyme/test2";
+	}
 
 	@GetMapping("/jsptest")
 	public String jsptest(Model model) {
