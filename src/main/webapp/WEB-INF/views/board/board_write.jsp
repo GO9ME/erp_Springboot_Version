@@ -25,7 +25,7 @@
 			<div class="form-panel">
 			
 				<form class="form-horizontal style-form" 
-					action="/board/insert" method="post"
+					action="/erp/board/insert" method="post"
 					enctype="multipart/form-data">
 					<div class="form-group" style="border: 1px solid #eff2f7;">
 						

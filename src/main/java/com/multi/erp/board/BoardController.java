@@ -45,7 +45,7 @@ public class BoardController {
 		return "board/writepage";//view
 	}
 	
-	@PostMapping("/board/write")
+	@PostMapping("/board/insert")
 	public String write(BoardDTO board,HttpSession session) throws IllegalStateException, IOException {
 		System.out.println(board);
 		//1. MultipartFile정보를 추출
@@ -54,11 +54,11 @@ public class BoardController {
 		//  - 실제 서버의 경로를 추출하기 위해서 Context객체의 정보를 담고 있는 ServletContext객체를 추출
 		//  - ServletContext가 우리가 웹에서 운영할 프로젝트에 대한 정보를 담고 있는 객체이고
 		//    실제경로를 구할 수 있는 메소드가 있음
-		String path = WebUtils.getRealPath(session.getServletContext(), "/WEB-INF/upload");
-		System.out.println("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
-		System.out.println(path);
+		//String path = WebUtils.getRealPath(session.getServletContext(), "/WEB-INF/upload");
+		//System.out.println("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
+		//System.out.println(path);
 		//3. 업로드로직을 구현해서 업로드 되도록 처리
-		List<BoardFileDTO> boardfiledtolist =  fileuploadservice.uploadFiles(files, path);
+		List<BoardFileDTO> boardfiledtolist =  fileuploadservice.uploadFiles(files);
 		//4. 게시글에 대한 일반적인 내용과 첨부파일이 있는 경우 첨부되는 파일의 정보를 담은 List<BoardFileDTO>를 디비에 저장하기 위해 서비스에 전달
 		service.insert(board, boardfiledtolist);
 		
@@ -132,8 +132,7 @@ public class BoardController {
 		//                                                  ----------------
 		//                                                    실제 파일이 있는 위치
 		//미리 업로드된 파일을 다운로드해야 하므로 업로드된 파일이 저장된 위치와 실제 저장된 파일명을 연결해서 경로를 만들어주어야 한다. 
-		UrlResource resource = new UrlResource("file:"+WebUtils.getRealPath(session.getServletContext(),
-																"/WEB-INF/upload/"+selectfileInfo.getStoreFilename()));
+		UrlResource resource = new UrlResource("file:"+fileuploadservice.getUploadpath(selectfileInfo.getStoreFilename()));
 		//3. 파일명에 한글이 있는 경우 오류가 발생하지 않도록 처리 - 다운로드되는 파일명
 		String encodedFilename = UriUtils.encode(selectfileInfo.getOriginalFilename(), "UTF-8");
 		//4. 파일을 다운로드형식으로 응답하기 위해서 응답헤더에 셋팅 : attachment; filename="a.jpg"

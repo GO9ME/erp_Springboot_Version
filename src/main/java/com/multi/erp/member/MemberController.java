@@ -58,12 +58,12 @@ public class MemberController {
 	public String insert(MemberDTO user,HttpSession session) throws IllegalStateException, IOException {
 		//파일업로드
 		MultipartFile file = user.getUserImage();
-		String path = WebUtils.getRealPath(session.getServletContext(), "/WEB-INF/static/images");
+		//String path = WebUtils.getRealPath(session.getServletContext(), "/WEB-INF/static/upload");
 		System.out.println("=========================");
 		System.out.println(user);
 		System.out.println("=========================");
 		// 파일업로드 서비스의 메소드를호출해서 직접 업로드
-		String storeFilename = fileuploadService.uploadFile(file, path);
+		String storeFilename = fileuploadService.uploadFile(file);
 		user.setProfile_photo(storeFilename);
 		if(user.getMarry()==null) {//체크박스 선택하지 않았다는 의미 - 미혼의의미
 			user.setMarry("0");
@@ -73,7 +73,7 @@ public class MemberController {
 		System.out.println(user);
 		System.out.println("====================******************************======");
 		service.insert(user);
-		return "redirect:/index.do";
+		return "redirect:/index";
 	}
 	@GetMapping("/login.do")
 	public String login() {
@@ -128,7 +128,7 @@ public class MemberController {
 	public String springlogout(SessionStatus status) {
 		System.out.println("SessionStatus를 이용한 로그아웃처리하기");
 		status.setComplete();//세션에 있는 객체를 제거 
-		return "redirect:/index.do";
+		return "redirect:/index";
 	}
 	
 	
