@@ -58,7 +58,6 @@ public class BoardDTO {
 		return files;
 	}
 	public void setFiles(List<MultipartFile> files) {
-		System.out.println("********************************************");
 		
 		this.files = files;
 	}
@@ -69,11 +68,9 @@ public class BoardDTO {
 		this.board_no = board_no;
 	}
 	public String getId() {
-		System.out.println("getId()");
 		return id;
 	}
 	public void setId(String id) {
-		System.out.println("setId()");
 		this.id = id;
 	}
 	public Date getWrite_date() {

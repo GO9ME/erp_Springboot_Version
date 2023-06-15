@@ -4,9 +4,9 @@
        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 <tiles-definitions>
 	<definition name="res/main" extends="mainTemplate">
-		<put-attribute name="menu" value="/WEB-INF/menu/common_resource_menu.jsp"/>
+		<put-attribute name="menu" value="/WEB-INF/views/menu/common_resource_menu.jsp"/>
 		<put-attribute name="content" 
-			value="/WEB-INF/resMgr/meetingroom.jsp"/>
+			value="/WEB-INF/views/resMgr/meetingroom.jsp"/>
 	</definition>
 	
 </tiles-definitions>

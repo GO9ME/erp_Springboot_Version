@@ -61,12 +61,15 @@ public class MemberDAOImpl implements MemberDAO{
 	@Override
 	public MemberDTO login(MemberDTO loginUser) {
 		// TODO Auto-generated method stub
-		return sqlSessionTemplate.selectOne("com.multi.erp.member.login", loginUser);
+		MemberDTO user = sqlSessionTemplate.selectOne("com.multi.erp.member.login", loginUser);
+		System.out.println(user);
+		return user;
 	}
 
 	@Override
 	public boolean idCheck(String id) {
 		boolean result = false;
+		System.out.println(id);
 		MemberDTO user = sqlSessionTemplate.selectOne("com.multi.erp.member.idcheck", id);
 		if(user!=null) {
 			result = true;

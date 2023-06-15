@@ -126,12 +126,10 @@ public class MemberDTO {
 	}
 
 	public String getId() {
-		System.out.println("==============getId()=============");
 		return id;
 	}
 
 	public void setId(String id) {
-		System.out.println("==============setId()=============");
 		this.id = id;
 	}
 

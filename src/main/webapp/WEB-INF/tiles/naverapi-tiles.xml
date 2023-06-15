@@ -4,8 +4,8 @@
        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 <tiles-definitions>
 	<definition name="commonjob/receiptjob" extends="mainTemplate">
-		<put-attribute name="menu" value="/WEB-INF/menu/common_resource_menu.jsp"/>
+		<put-attribute name="menu" value="/WEB-INF/views/menu/common_resource_menu.jsp"/>
 		<put-attribute name="content" 
-			value="/WEB-INF/naverclover/receiptjob_ocr.jsp"/>
+			value="/WEB-INF/views/naverclover/receiptjob_ocr.jsp"/>
 	</definition>
 </tiles-definitions>
