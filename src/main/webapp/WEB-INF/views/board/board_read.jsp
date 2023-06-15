@@ -74,7 +74,7 @@
 				<!-- 디비에 저장된 파일명을 출력  -->
 				<c:forEach var="file" items="${boardfiledtolist }">
 					<h5><a href="/erp/board/download/${board.id }/${board.board_no}/${file.boardFileno}">${file.originalFilename }</a></h5>
-					<img alt="" src="/erp/upload/${file.storeFilename}" width="300">
+					<img alt="" src="/erp/download/${file.storeFilename}" width="300">
 				</c:forEach>
 			</div>
 		</div>

@@ -1,4 +1,4 @@
-<%@page import="com.multi.erp.dept.DeptDTO"%>
+<%@page import="com.multi.thymeleafPro.dept.DeptDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
@@ -16,7 +16,7 @@
 </head>
 <body>
 	<%
-		DeptDTO dept = (DeptDTO)request.getAttribute("dept");
+		Dept dept = (Dept)request.getAttribute("dept");
 	%>
 			<div class="col-lg-10">
 				<form role="form" class="form-horizontal"
